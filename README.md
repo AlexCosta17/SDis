@@ -1,9 +1,8 @@
 # Projeto de Sistemas Distribuídos 2016-2017 #
 
-Grupo CXX
-*(preencher com identificador de grupo e depois apagar esta linha)*
+Grupo T53
 
-... ... ...
+Alexandre Costa nº81978 alexandre.bruno.costa@hotmail.com
 
 ... ... ...
 

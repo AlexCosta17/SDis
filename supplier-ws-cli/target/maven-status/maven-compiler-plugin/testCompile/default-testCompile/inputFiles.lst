@@ -1,5 +1,5 @@
-/home/es77899/SDis/supplier-ws-cli/src/test/java/org/komparator/supplier/ws/it/BuyProductIT.java
-/home/es77899/SDis/supplier-ws-cli/src/test/java/org/komparator/supplier/ws/it/BaseIT.java
-/home/es77899/SDis/supplier-ws-cli/src/test/java/org/komparator/supplier/ws/it/GetProductIT.java
-/home/es77899/SDis/supplier-ws-cli/src/test/java/org/komparator/supplier/ws/it/PingIT.java
-/home/es77899/SDis/supplier-ws-cli/src/test/java/org/komparator/supplier/ws/it/SearchProductsIT.java
+/home/zedamicroval/git-repos/SDis/supplier-ws-cli/src/test/java/org/komparator/supplier/ws/it/GetProductIT.java
+/home/zedamicroval/git-repos/SDis/supplier-ws-cli/src/test/java/org/komparator/supplier/ws/it/BuyProductIT.java
+/home/zedamicroval/git-repos/SDis/supplier-ws-cli/src/test/java/org/komparator/supplier/ws/it/PingIT.java
+/home/zedamicroval/git-repos/SDis/supplier-ws-cli/src/test/java/org/komparator/supplier/ws/it/BaseIT.java
+/home/zedamicroval/git-repos/SDis/supplier-ws-cli/src/test/java/org/komparator/supplier/ws/it/SearchProductsIT.java

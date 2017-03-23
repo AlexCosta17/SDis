@@ -19,11 +19,24 @@ public class BuyProductIT extends BaseIT {
 
 	// one-time initialization and clean-up
 	@BeforeClass
-	public static void oneTimeSetUp() {
+	public static void oneTimeSetUp() throws BadProductId_Exception, BadProduct_Exception {
+		
+		
+		client.clear();
+		
+	{
+		ProductView product = new ProductView();
+		product.setId("X1");
+		product.setDesc("Basketball");
+		product.setPrice(10);
+		product.setQuantity(15);
+		client.createProduct(product);
+	}
 	}
 
 	@AfterClass
 	public static void oneTimeTearDown() {
+		client.clear();
 	}
 
 	// members
@@ -46,11 +59,41 @@ public class BuyProductIT extends BaseIT {
 
 	// bad input tests
 
-	// TODO
+	@Test(expected = BadProductId_Exception.class)
+	public void buyProductNullTest() throws BadProductId_Exception, BadQuantity_Exception, InsufficientQuantity_Exception {
+		client.buyProduct(null, 0);
+	}
+
+	@Test(expected = BadProductId_Exception.class)
+	public void buyProductEmptyTest() throws BadProductId_Exception, BadQuantity_Exception, InsufficientQuantity_Exception {
+		client.buyProduct("", 0);
+	}
+
+	@Test(expected = BadProductId_Exception.class)
+	public void buyProductWhitespaceTest() throws BadProductId_Exception, BadQuantity_Exception, InsufficientQuantity_Exception {
+		client.buyProduct(" ", 0);
+	}
+
+	@Test(expected = BadProductId_Exception.class)
+	public void buyProductTabTest() throws BadProductId_Exception, BadQuantity_Exception, InsufficientQuantity_Exception {
+		client.buyProduct("\t", 0);
+	}
+
+	@Test(expected = BadProductId_Exception.class)
+	public void buyProductNewlineTest() throws BadProductId_Exception, BadQuantity_Exception, InsufficientQuantity_Exception {
+		client.buyProduct("\n", 0);
+	}
 	
 
 	// main tests
+	
+	@Test
+	public void buyProductExistsTest() throws BadProductId_Exception, BadQuantity_Exception, InsufficientQuantity_Exception {
+		String purchaseId = client.buyProduct("X1", 10);
+		ProductView product = client.getProduct("X1");
+		assertEquals(5, product.getQuantity());
+	}
 
-	// TODO
+	
 	
 }

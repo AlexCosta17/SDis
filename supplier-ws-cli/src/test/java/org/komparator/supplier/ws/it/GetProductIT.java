@@ -1,6 +1,7 @@
 package org.komparator.supplier.ws.it;
 
 import static org.junit.Assert.assertEquals;
+
 import static org.junit.Assert.assertNull;
 
 import org.junit.After;

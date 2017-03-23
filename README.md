@@ -4,10 +4,9 @@ Grupo T53
 
 Alexandre Costa nº81978 alexandre.bruno.costa@hotmail.com
 
-... ... ...
+Artur Gandra Esteves nº77899 arturjgandra@gmail.com
 
-... ... ...
-*(preencher com nome, número e email de membro do grupo e depois apagar esta linha)*
+José Pedro Gomes nº81962 jose.pedro.gomes@tecnico.ulisboa.pt
 
 
 -------------------------------------------------------------------------------

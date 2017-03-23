@@ -56,8 +56,8 @@ public interface SupplierPortType {
      * @param productId
      * @return
      *     returns java.lang.String
-     * @throws InsufficientQuantity_Exception
      * @throws BadProductId_Exception
+     * @throws InsufficientQuantity_Exception
      * @throws BadQuantity_Exception
      */
     @WebMethod

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="org.komparator.supplier.ws.it.PingIT" time="0.059" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="org.komparator.supplier.ws.it.BuyProductIT" time="1.007" tests="11" errors="1" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-oracle/jre/lib/amd64"/>
@@ -61,5 +61,19 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="pingEmptyTest" classname="org.komparator.supplier.ws.it.PingIT" time="0.004"/>
+  <testcase name="buyProductAnotherExitsTest" classname="org.komparator.supplier.ws.it.BuyProductIT" time="0.088"/>
+  <testcase name="buyProductCheckQuantityBigger" classname="org.komparator.supplier.ws.it.BuyProductIT" time="0.05"/>
+  <testcase name="buyProductTabTest" classname="org.komparator.supplier.ws.it.BuyProductIT" time="0.048"/>
+  <testcase name="buyProductNewlineTest" classname="org.komparator.supplier.ws.it.BuyProductIT" time="0.048"/>
+  <testcase name="buyProductNullTest" classname="org.komparator.supplier.ws.it.BuyProductIT" time="0.072">
+    <error message="Unexpected exception, expected&lt;org.komparator.supplier.ws.BadProductId_Exception&gt; but was&lt;com.sun.xml.ws.fault.ServerSOAPFaultException&gt;" type="java.lang.Exception"><![CDATA[java.lang.Exception: Unexpected exception, expected<org.komparator.supplier.ws.BadProductId_Exception> but was<com.sun.xml.ws.fault.ServerSOAPFaultException>
+	at org.komparator.supplier.ws.it.BuyProductIT.buyProductNullTest(BuyProductIT.java:97)
+]]></error>
+  </testcase>
+  <testcase name="buyProductCheckQuantityNegative" classname="org.komparator.supplier.ws.it.BuyProductIT" time="0.047"/>
+  <testcase name="buyProductEmptyTest" classname="org.komparator.supplier.ws.it.BuyProductIT" time="0.049"/>
+  <testcase name="buyProductWhitespaceTest" classname="org.komparator.supplier.ws.it.BuyProductIT" time="0.047"/>
+  <testcase name="buyProductYetAnotherExitsTest" classname="org.komparator.supplier.ws.it.BuyProductIT" time="0.09"/>
+  <testcase name="buyProductCheckQuantityZero" classname="org.komparator.supplier.ws.it.BuyProductIT" time="0.048"/>
+  <testcase name="buyProductExistsTest" classname="org.komparator.supplier.ws.it.BuyProductIT" time="0.088"/>
 </testsuite>

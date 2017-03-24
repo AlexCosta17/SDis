@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: org.komparator.supplier.ws.it.BuyProductIT
+-------------------------------------------------------------------------------
+Tests run: 11, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.007 sec <<< FAILURE! - in org.komparator.supplier.ws.it.BuyProductIT
+buyProductNullTest(org.komparator.supplier.ws.it.BuyProductIT)  Time elapsed: 0.072 sec  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<org.komparator.supplier.ws.BadProductId_Exception> but was<com.sun.xml.ws.fault.ServerSOAPFaultException>
+	at org.komparator.supplier.ws.it.BuyProductIT.buyProductNullTest(BuyProductIT.java:97)
+

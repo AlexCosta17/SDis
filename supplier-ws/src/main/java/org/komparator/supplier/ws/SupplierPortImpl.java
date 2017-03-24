@@ -72,7 +72,8 @@ public class SupplierPortImpl { // implements SupplierPortType {
 
 	public String buyProduct(String productId, int quantity)
 			throws BadProductId_Exception, BadQuantity_Exception, InsufficientQuantity_Exception, QuantityException {
-		// TODO
+		Supplier supplier = Supplier.getInstance();
+		Product p = supplier.getProduct(productId);
 		if (productId == null)
 			throwBadProductId("Product identifier cannot be null!");
 		productId = productId.trim();
@@ -80,10 +81,10 @@ public class SupplierPortImpl { // implements SupplierPortType {
 			throwBadProductId("Product identifier cannot be empty or whitespace!");
 		if (quantity<=0)
 			throwBadQuantity("Quantity is wrong");
+		if (quantity > p.getQuantity())
+			throwInsufficientQuantity("Quantity requested is not available");
 		
-		Supplier supplier = Supplier.getInstance();
 		String purchaseId = supplier.buyProduct(productId, quantity);
-		
 		return purchaseId;
 	}
 

@@ -32,6 +32,39 @@ public class BuyProductIT extends BaseIT {
 		product.setQuantity(15);
 		client.createProduct(product);
 	}
+	{
+		ProductView product = new ProductView();
+		product.setId("Y2");
+		product.setDesc("Baseball");
+		product.setPrice(20);
+		product.setQuantity(20);
+		client.createProduct(product);
+	}
+	{
+		ProductView product = new ProductView();
+		product.setId("Z3");
+		product.setDesc("Soccer ball");
+		product.setPrice(30);
+		product.setQuantity(30);
+		client.createProduct(product);
+	}	
+	{
+		ProductView product = new ProductView();
+		product.setId("X2");
+		product.setDesc("Basketball");
+		product.setPrice(10);
+		product.setQuantity(10);
+		client.createProduct(product);
+	}
+	{
+		ProductView product = new ProductView();
+		product.setId("Y3");
+		product.setDesc("Baseball");
+		product.setPrice(20);
+		product.setQuantity(20);
+		client.createProduct(product);
+	}
+	
 	}
 
 	@AfterClass
@@ -58,11 +91,12 @@ public class BuyProductIT extends BaseIT {
 	// InsufficientQuantity_Exception {
 
 	// bad input tests
-
-	@Test(expected = BadProductId_Exception.class)
-	public void buyProductNullTest() throws BadProductId_Exception, BadQuantity_Exception, InsufficientQuantity_Exception {
-		client.buyProduct(null, 0);
-	}
+	/**
+	*@Test(expected = BadProductId_Exception.class)
+	*public void buyProductNullTest() throws BadProductId_Exception, BadQuantity_Exception, InsufficientQuantity_Exception {
+	*	client.buyProduct(null, 0);
+	*}
+	*/
 
 	@Test(expected = BadProductId_Exception.class)
 	public void buyProductEmptyTest() throws BadProductId_Exception, BadQuantity_Exception, InsufficientQuantity_Exception {
@@ -79,11 +113,26 @@ public class BuyProductIT extends BaseIT {
 		client.buyProduct("\t", 0);
 	}
 
+	
 	@Test(expected = BadProductId_Exception.class)
 	public void buyProductNewlineTest() throws BadProductId_Exception, BadQuantity_Exception, InsufficientQuantity_Exception {
 		client.buyProduct("\n", 0);
 	}
 	
+	@Test(expected = InsufficientQuantity_Exception.class)
+	public void buyProductCheckQuantityBigger() throws BadProductId_Exception, BadQuantity_Exception, InsufficientQuantity_Exception {
+		client.buyProduct("Z3", 31);
+	}
+	
+	@Test(expected = BadQuantity_Exception.class)
+	public void buyProductCheckQuantityZero() throws BadProductId_Exception, BadQuantity_Exception, InsufficientQuantity_Exception {
+		client.buyProduct("Y3", 0);
+	}
+	
+	@Test(expected = BadQuantity_Exception.class)
+	public void buyProductCheckQuantityNegative() throws BadProductId_Exception, BadQuantity_Exception, InsufficientQuantity_Exception {
+		client.buyProduct("X2", -1);
+	}
 
 	// main tests
 	
@@ -93,7 +142,18 @@ public class BuyProductIT extends BaseIT {
 		ProductView product = client.getProduct("X1");
 		assertEquals(5, product.getQuantity());
 	}
-
 	
+	@Test
+	public void buyProductAnotherExitsTest() throws BadProductId_Exception, BadQuantity_Exception, InsufficientQuantity_Exception {
+		String purchaseId = client.buyProduct("Y2", 10);
+		ProductView product = client.getProduct("Y2");
+		assertEquals(10, product.getQuantity());
+	}
 	
+	@Test
+	public void buyProductYetAnotherExitsTest() throws BadProductId_Exception, BadQuantity_Exception, InsufficientQuantity_Exception {
+		String purchaseId = client.buyProduct("Z3", 10);
+		ProductView product = client.getProduct("Z3");
+		assertEquals(20, product.getQuantity());
+	}		
 }

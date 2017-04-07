@@ -98,7 +98,7 @@ public class SupplierPortImpl { // implements SupplierPortType {
 
 		StringBuilder builder = new StringBuilder();
 		builder.append("Hello ").append(name);
-		builder.append(" from ").append(wsName);
+		builder.append(" from ").append(wsName).append("\n");
 		return builder.toString();
 	}
 

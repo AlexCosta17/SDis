@@ -1,0 +1,64 @@
+-------------------------------------------------------------------------------
+Test set: org.komparator.mediator.ws.it.GetItemsIT
+-------------------------------------------------------------------------------
+Tests run: 10, Failures: 0, Errors: 10, Skipped: 0, Time elapsed: 0.612 sec <<< FAILURE! - in org.komparator.mediator.ws.it.GetItemsIT
+getProductsLowercaseNotExistsTest(org.komparator.mediator.ws.it.GetItemsIT)  Time elapsed: 0.002 sec  <<< ERROR!
+com.sun.xml.ws.client.ClientTransportException: HTTP transport error: java.net.ConnectException: Connection refused (Connection refused)
+	at org.komparator.mediator.ws.it.GetItemsIT.getProductsLowercaseNotExistsTest(GetItemsIT.java:135)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at org.komparator.mediator.ws.it.GetItemsIT.getProductsLowercaseNotExistsTest(GetItemsIT.java:135)
+
+getProductsExistsTest2(org.komparator.mediator.ws.it.GetItemsIT)  Time elapsed: 0.002 sec  <<< ERROR!
+com.sun.xml.ws.client.ClientTransportException: HTTP transport error: java.net.ConnectException: Connection refused (Connection refused)
+	at org.komparator.mediator.ws.it.GetItemsIT.getProductsExistsTest2(GetItemsIT.java:120)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at org.komparator.mediator.ws.it.GetItemsIT.getProductsExistsTest2(GetItemsIT.java:120)
+
+getItemsWhitSpacesTest(org.komparator.mediator.ws.it.GetItemsIT)  Time elapsed: 0.002 sec  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<org.komparator.mediator.ws.InvalidItemId_Exception> but was<com.sun.xml.ws.client.ClientTransportException>
+	at org.komparator.mediator.ws.it.GetItemsIT.getItemsWhitSpacesTest(GetItemsIT.java:94)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at org.komparator.mediator.ws.it.GetItemsIT.getItemsWhitSpacesTest(GetItemsIT.java:94)
+
+getProductsNotExistsTest(org.komparator.mediator.ws.it.GetItemsIT)  Time elapsed: 0.002 sec  <<< ERROR!
+com.sun.xml.ws.client.ClientTransportException: HTTP transport error: java.net.ConnectException: Connection refused (Connection refused)
+	at org.komparator.mediator.ws.it.GetItemsIT.getProductsNotExistsTest(GetItemsIT.java:129)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at org.komparator.mediator.ws.it.GetItemsIT.getProductsNotExistsTest(GetItemsIT.java:129)
+
+getItemsEmptyTest(org.komparator.mediator.ws.it.GetItemsIT)  Time elapsed: 0.002 sec  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<org.komparator.mediator.ws.InvalidItemId_Exception> but was<com.sun.xml.ws.client.ClientTransportException>
+	at org.komparator.mediator.ws.it.GetItemsIT.getItemsEmptyTest(GetItemsIT.java:89)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at org.komparator.mediator.ws.it.GetItemsIT.getItemsEmptyTest(GetItemsIT.java:89)
+
+getItemsNewLineTest(org.komparator.mediator.ws.it.GetItemsIT)  Time elapsed: 0.002 sec  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<org.komparator.mediator.ws.InvalidItemId_Exception> but was<com.sun.xml.ws.client.ClientTransportException>
+	at org.komparator.mediator.ws.it.GetItemsIT.getItemsNewLineTest(GetItemsIT.java:105)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at org.komparator.mediator.ws.it.GetItemsIT.getItemsNewLineTest(GetItemsIT.java:105)
+
+getItemsNullTest(org.komparator.mediator.ws.it.GetItemsIT)  Time elapsed: 0.002 sec  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<org.komparator.mediator.ws.InvalidItemId_Exception> but was<com.sun.xml.ws.client.ClientTransportException>
+	at org.komparator.mediator.ws.it.GetItemsIT.getItemsNullTest(GetItemsIT.java:84)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at org.komparator.mediator.ws.it.GetItemsIT.getItemsNullTest(GetItemsIT.java:84)
+
+getItemsTabTest(org.komparator.mediator.ws.it.GetItemsIT)  Time elapsed: 0.002 sec  <<< ERROR!
+java.lang.Exception: Unexpected exception, expected<org.komparator.mediator.ws.InvalidItemId_Exception> but was<com.sun.xml.ws.client.ClientTransportException>
+	at org.komparator.mediator.ws.it.GetItemsIT.getItemsTabTest(GetItemsIT.java:100)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at org.komparator.mediator.ws.it.GetItemsIT.getItemsTabTest(GetItemsIT.java:100)
+
+getProductsExistsTest(org.komparator.mediator.ws.it.GetItemsIT)  Time elapsed: 0.002 sec  <<< ERROR!
+com.sun.xml.ws.client.ClientTransportException: HTTP transport error: java.net.ConnectException: Connection refused (Connection refused)
+	at org.komparator.mediator.ws.it.GetItemsIT.getProductsExistsTest(GetItemsIT.java:111)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at org.komparator.mediator.ws.it.GetItemsIT.getProductsExistsTest(GetItemsIT.java:111)
+
+org.komparator.mediator.ws.it.GetItemsIT  Time elapsed: 0.004 sec  <<< ERROR!
+com.sun.xml.ws.client.ClientTransportException: HTTP transport error: java.net.ConnectException: Connection refused (Connection refused)
+	at org.komparator.mediator.ws.it.GetItemsIT.oneTimeTearDown(GetItemsIT.java:63)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at org.komparator.mediator.ws.it.GetItemsIT.oneTimeTearDown(GetItemsIT.java:63)
+

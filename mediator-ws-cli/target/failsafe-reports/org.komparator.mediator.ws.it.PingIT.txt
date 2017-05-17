@@ -1,0 +1,10 @@
+-------------------------------------------------------------------------------
+Test set: org.komparator.mediator.ws.it.PingIT
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.698 sec <<< FAILURE! - in org.komparator.mediator.ws.it.PingIT
+pingEmptyTest(org.komparator.mediator.ws.it.PingIT)  Time elapsed: 0.102 sec  <<< ERROR!
+com.sun.xml.ws.client.ClientTransportException: HTTP transport error: java.net.ConnectException: Connection refused (Connection refused)
+	at org.komparator.mediator.ws.it.PingIT.pingEmptyTest(PingIT.java:20)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at org.komparator.mediator.ws.it.PingIT.pingEmptyTest(PingIT.java:20)
+

@@ -1,0 +1,10 @@
+-------------------------------------------------------------------------------
+Test set: org.komparator.mediator.ws.it.SearchItemsIT
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 2.451 sec <<< FAILURE! - in org.komparator.mediator.ws.it.SearchItemsIT
+org.komparator.mediator.ws.it.SearchItemsIT  Time elapsed: 2.449 sec  <<< ERROR!
+com.sun.xml.ws.client.ClientTransportException: HTTP transport error: java.net.ConnectException: Connection refused (Connection refused)
+	at org.komparator.mediator.ws.it.SearchItemsIT.oneTimeSetUp(SearchItemsIT.java:29)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at org.komparator.mediator.ws.it.SearchItemsIT.oneTimeSetUp(SearchItemsIT.java:29)
+

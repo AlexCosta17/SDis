@@ -2,6 +2,7 @@
 package org.komparator.mediator.ws;
 
 import java.util.List;
+import javax.jws.Oneway;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebResult;
@@ -25,6 +26,39 @@ import javax.xml.ws.ResponseWrapper;
 })
 public interface MediatorPortType {
 
+
+    /**
+     * 
+     */
+    @WebMethod
+    @Oneway
+    @RequestWrapper(localName = "imAlive", targetNamespace = "http://ws.mediator.komparator.org/", className = "org.komparator.mediator.ws.ImAlive")
+    @Action(input = "http://ws.mediator.komparator.org/Mediator/imAliveRequest")
+    public void imAlive();
+
+    /**
+     * 
+     * @param shopResults
+     */
+    @WebMethod
+    @Oneway
+    @RequestWrapper(localName = "updateShopHistory", targetNamespace = "http://ws.mediator.komparator.org/", className = "org.komparator.mediator.ws.UpdateShopHistory")
+    @Action(input = "http://ws.mediator.komparator.org/Mediator/updateShopHistoryRequest")
+    public void updateShopHistory(
+        @WebParam(name = "shopResults", targetNamespace = "")
+        List<ShoppingResultView> shopResults);
+
+    /**
+     * 
+     * @param lcarts
+     */
+    @WebMethod
+    @Oneway
+    @RequestWrapper(localName = "updateCart", targetNamespace = "http://ws.mediator.komparator.org/", className = "org.komparator.mediator.ws.UpdateCart")
+    @Action(input = "http://ws.mediator.komparator.org/Mediator/updateCartRequest")
+    public void updateCart(
+        @WebParam(name = "lcarts", targetNamespace = "")
+        List<CartView> lcarts);
 
     /**
      * 
@@ -93,9 +127,9 @@ public interface MediatorPortType {
      * @param cartId
      * @return
      *     returns org.komparator.mediator.ws.ShoppingResultView
-     * @throws InvalidCartId_Exception
      * @throws EmptyCart_Exception
      * @throws InvalidCreditCard_Exception
+     * @throws InvalidCartId_Exception
      */
     @WebMethod
     @WebResult(name = "shopResult", targetNamespace = "")
@@ -119,10 +153,10 @@ public interface MediatorPortType {
      * @param itemId
      * @param itemQty
      * @param cartId
-     * @throws InvalidCartId_Exception
      * @throws InvalidQuantity_Exception
-     * @throws InvalidItemId_Exception
      * @throws NotEnoughItems_Exception
+     * @throws InvalidItemId_Exception
+     * @throws InvalidCartId_Exception
      */
     @WebMethod
     @RequestWrapper(localName = "addToCart", targetNamespace = "http://ws.mediator.komparator.org/", className = "org.komparator.mediator.ws.AddToCart")

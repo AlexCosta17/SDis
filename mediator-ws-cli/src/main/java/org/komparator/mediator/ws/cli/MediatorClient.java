@@ -155,5 +155,22 @@ public class MediatorClient implements MediatorPortType {
 	 public List<ShoppingResultView> shopHistory() {
 		 return port.shopHistory();
 	 }
+
+	@Override
+	public void updateShopHistory(List<ShoppingResultView> shopResults) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void updateCart(List<CartView> lcarts) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	@Override
+	public void imAlive() {
+		port.imAlive();
+	}
  
 }

@@ -1,6 +1,7 @@
 package org.komparator.mediator.ws;
 
 import java.io.IOException;
+import java.sql.Date;
 
 import javax.xml.ws.Endpoint;
 
@@ -9,6 +10,8 @@ import pt.ulisboa.tecnico.sdis.ws.uddi.UDDINaming;
 /** End point manager */
 public class MediatorEndpointManager {
 
+	public static boolean main;
+	public static Date date;
 	/** UDDI naming server location */
 	private String uddiURL = null;
 	/** Web Service name */
@@ -43,6 +46,11 @@ public class MediatorEndpointManager {
 
 	/** output option **/
 	private boolean verbose = true;
+	
+	public String getwsURL(){
+		return wsURL;
+	};
+		
 
 	public boolean isVerbose() {
 		return verbose;

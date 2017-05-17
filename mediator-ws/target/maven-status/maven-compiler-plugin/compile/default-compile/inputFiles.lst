@@ -1,5 +1,6 @@
 /home/zedamicroval/SDis/mediator-ws/target/generated-sources/wsimport/org/komparator/mediator/ws/ShopHistoryResponse.java
 /home/zedamicroval/SDis/mediator-ws/target/generated-sources/wsimport/org/komparator/mediator/ws/InvalidQuantity_Exception.java
+/home/zedamicroval/SDis/mediator-ws/target/generated-sources/wsimport/org/komparator/mediator/ws/ImAlive.java
 /home/zedamicroval/SDis/mediator-ws/target/generated-sources/wsimport/org/komparator/mediator/ws/Clear.java
 /home/zedamicroval/SDis/mediator-ws/target/generated-sources/wsimport/org/komparator/mediator/ws/EmptyCart_Exception.java
 /home/zedamicroval/SDis/mediator-ws/target/generated-sources/wsimport/org/komparator/mediator/ws/CartItemView.java
@@ -18,11 +19,13 @@
 /home/zedamicroval/SDis/mediator-ws/target/generated-sources/wsimport/org/komparator/mediator/ws/BuyCartResponse.java
 /home/zedamicroval/SDis/mediator-ws/target/generated-sources/wsimport/org/komparator/mediator/ws/InvalidCartId_Exception.java
 /home/zedamicroval/SDis/mediator-ws/target/generated-sources/wsimport/org/komparator/mediator/ws/ItemIdView.java
+/home/zedamicroval/SDis/mediator-ws/target/generated-sources/wsimport/org/komparator/mediator/ws/UpdateShopHistory.java
 /home/zedamicroval/SDis/mediator-ws/target/generated-sources/wsimport/org/komparator/mediator/ws/InvalidCartId.java
 /home/zedamicroval/SDis/mediator-ws/target/generated-sources/wsimport/org/komparator/mediator/ws/InvalidCreditCard.java
 /home/zedamicroval/SDis/mediator-ws/target/generated-sources/wsimport/org/komparator/mediator/ws/NotEnoughItems.java
 /home/zedamicroval/SDis/mediator-ws/target/generated-sources/wsimport/org/komparator/mediator/ws/ShopHistory.java
 /home/zedamicroval/SDis/mediator-ws/target/generated-sources/wsimport/org/komparator/mediator/ws/ListCarts.java
+/home/zedamicroval/SDis/mediator-ws/target/generated-sources/wsimport/org/komparator/mediator/ws/UpdateCart.java
 /home/zedamicroval/SDis/mediator-ws/target/generated-sources/wsimport/org/komparator/mediator/ws/MediatorService.java
 /home/zedamicroval/SDis/mediator-ws/target/generated-sources/wsimport/org/komparator/mediator/ws/AddToCart.java
 /home/zedamicroval/SDis/mediator-ws/src/main/java/org/komparator/mediator/ws/MediatorApp.java

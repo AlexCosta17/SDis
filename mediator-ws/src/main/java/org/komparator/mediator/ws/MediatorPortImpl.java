@@ -1,5 +1,8 @@
 package org.komparator.mediator.ws;
 
+import java.security.Timestamp;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -201,6 +204,34 @@ public class MediatorPortImpl implements MediatorPortType{
 		InvalidQuantity faultInfo = new InvalidQuantity();
 		faultInfo.message = message;
 		throw new InvalidQuantity_Exception(message, faultInfo);
+	}
+
+	@Override
+	public void imAlive() {
+		if(endpointManager.getwsURL().equals("http://localhost:8071/mediator-ws/endpoint")){
+			
+		}
+		else{
+			Date time = new Date(0);
+			lastDate = resultado.format(time);
+			System.out.println(lastDate);
+		}
+			
+	}
+	
+	public static String lastDate;
+	private SimpleDateFormat resultado = new SimpleDateFormat("yyyy-MM-dd' 'HH:mm:ss.SSS");
+
+	@Override
+	public void updateShopHistory(List<ShoppingResultView> shopResults) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void updateCart(List<CartView> lcarts) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

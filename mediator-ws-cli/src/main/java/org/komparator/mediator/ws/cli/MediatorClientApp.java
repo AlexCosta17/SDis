@@ -36,8 +36,8 @@ public class MediatorClientApp {
         // the actual tests are made using JUnit
 
         System.out.println("Invoke ping()...");
-        String result = client.ping("http://localhost:9090");
-        System.out.println(result);
+        String result = client.ping("http://t53:bPdbPAoU@uddi.sd.rnl.tecnico.ulisboa.pt:9090/");
+        System.out.println(result);	
 
     }
 }

@@ -1,6 +1,9 @@
 package org.komparator.mediator.ws;
 
+<<<<<<< HEAD
 import java.util.ArrayList;
+=======
+>>>>>>> master
 import java.util.Collection;
 import java.util.List;
 
@@ -8,9 +11,12 @@ import javax.jws.WebService;
 
 import org.komparator.supplier.ws.BadProductId;
 import org.komparator.supplier.ws.BadProductId_Exception;
+<<<<<<< HEAD
 import org.komparator.supplier.ws.BadText;
 import org.komparator.supplier.ws.BadText_Exception;
 import org.komparator.supplier.ws.ProductView;
+=======
+>>>>>>> master
 import org.komparator.supplier.ws.cli.SupplierClient;
 import org.komparator.supplier.ws.cli.SupplierClientException;
 
@@ -36,6 +42,7 @@ public class MediatorPortImpl implements MediatorPortType{
 	}
 
 	// Main operations -------------------------------------------------------
+<<<<<<< HEAD
 	@Override
 	public List<ItemView> getItems(String productId) throws InvalidItemId_Exception {
 		if(productId == null)
@@ -64,11 +71,26 @@ public class MediatorPortImpl implements MediatorPortType{
 			e.printStackTrace();
 		}
 			
+=======
+    @Override
+	public List<ItemView> getItems(String productId) throws InvalidItemId_Exception {
+    	// check product id
+    	if (productId == null)
+    		throwInvalidItemId("Item identifier cannot be null!");
+    		productId = productId.trim();
+    	if (productId.length() == 0)
+    		throwInvalidItemId("Item identifier cannot be empty or whitespace!");
+
+    	
+    	
+    	
+>>>>>>> master
 		return getItems(productId);
 	}
 	
     @Override
 	public List<ItemView> searchItems(String descText) throws InvalidText_Exception {
+<<<<<<< HEAD
 		if (descText == null)
 			throwInvalidText("Product description cannot be null!");
 		descText = descText.trim();
@@ -98,11 +120,15 @@ public class MediatorPortImpl implements MediatorPortType{
 		}
 
     	return searchItems(descText);
+=======
+		return searchItems(descText);
+>>>>>>> master
 	}
 	
     @Override
 	public void addToCart(String cartId, ItemIdView itemId, int itemQty) throws InvalidCartId_Exception,
 	InvalidItemId_Exception, InvalidQuantity_Exception, NotEnoughItems_Exception {
+<<<<<<< HEAD
 		if (cartId == null)
 			throwInvalidCartId("Cart ID cannot be null!");
 		cartId = cartId.trim();
@@ -115,6 +141,9 @@ public class MediatorPortImpl implements MediatorPortType{
 		
     	
     	addToCart(cartId, itemId, itemQty);
+=======
+		addToCart(cartId, itemId, itemQty);
+>>>>>>> master
 	}
 	
     @Override
@@ -163,6 +192,7 @@ public class MediatorPortImpl implements MediatorPortType{
 
 	
 	// View helpers -----------------------------------------------------
+<<<<<<< HEAD
     // TODO
 	private ItemIdView newItemIdView(ProductView prod, String sId) {
 		ItemIdView view = new ItemIdView();
@@ -177,21 +207,31 @@ public class MediatorPortImpl implements MediatorPortType{
 		view.setPrice(prod.getPrice());
 		return view;
 	}
+=======
+	
+    // TODO
+>>>>>>> master
 
     
 	// Exception helpers -----------------------------------------------------
 
+<<<<<<< HEAD
 	private void throwInvalidText(final String message) throws InvalidText_Exception {
 		InvalidText faultInfo = new InvalidText();
 		faultInfo.setMessage(message);
 		throw new InvalidText_Exception(message, faultInfo);
 	}
 	
+=======
+    // TODO
+	/** Helper method to throw new BadProductId exception */
+>>>>>>> master
 	private void throwInvalidItemId(final String message) throws InvalidItemId_Exception {
 		InvalidItemId faultInfo = new InvalidItemId();
 		faultInfo.message = message;
 		throw new InvalidItemId_Exception(message, faultInfo);
 	}
+<<<<<<< HEAD
 	private void throwInvalidCartId(final String message) throws InvalidCartId_Exception {
 		InvalidCartId faultInfo = new InvalidCartId();
 		faultInfo.message = message;
@@ -202,5 +242,7 @@ public class MediatorPortImpl implements MediatorPortType{
 		faultInfo.message = message;
 		throw new InvalidQuantity_Exception(message, faultInfo);
 	}
+=======
+>>>>>>> master
 
 }

@@ -4,13 +4,17 @@ import java.io.IOException;
 
 import javax.xml.ws.Endpoint;
 
+import pt.ulisboa.tecnico.sdis.ws.uddi.UDDINaming;
+
 
 /** End point manager */
 public class SupplierEndpointManager {
 
 	/** Web Service location to publish */
 	private String wsURL = null;
-
+	private String uddiURL = null;
+	private String wsName = null;
+	
 	/** Port implementation */
 	private SupplierPortImpl portImpl = new SupplierPortImpl(this);
 
@@ -22,7 +26,12 @@ public class SupplierEndpointManager {
 
 	/** Web Service end point */
 	private Endpoint endpoint = null;
+	
+	private UDDINaming uddiNaming = null;
 
+	UDDINaming getUddiNaming() {
+		return uddiNaming;
+	}
 	/** output option **/
 	private boolean verbose = true;
 
@@ -38,6 +47,11 @@ public class SupplierEndpointManager {
 	public SupplierEndpointManager(String wsURL) {
 		if (wsURL == null)
 			throw new NullPointerException("Web Service URL cannot be null!");
+		this.wsURL = wsURL;
+	}
+	public SupplierEndpointManager(String uddiURL, String wsName, String wsURL) {
+		this.uddiURL = uddiURL;
+		this.wsName = wsName;
 		this.wsURL = wsURL;
 	}
 
@@ -59,6 +73,7 @@ public class SupplierEndpointManager {
 			}
 			throw e;
 		}
+		publishToUDDI();
 	}
 
 	public void awaitConnections() {
@@ -90,6 +105,43 @@ public class SupplierEndpointManager {
 			}
 		}
 		this.portImpl = null;
+		unpublishFromUDDI();
 	}
+	
+	void publishToUDDI() throws Exception {
+		try {
+			// publish to UDDI
+			if (uddiURL != null) {
+				if (verbose) {
+					System.out.printf("Publishing '%s' to UDDI at %s%n", wsName, uddiURL);
+				}
+				uddiNaming = new UDDINaming(uddiURL);
+				uddiNaming.rebind(wsName, wsURL);
+			}
+		} catch (Exception e) {
+			uddiNaming = null;
+			if (verbose) {
+				System.out.printf("Caught exception when binding to UDDI: %s%n", e);
+			}
+			throw e;
+		}
+	}
+	void unpublishFromUDDI() {
+		try {
+			if (uddiNaming != null) {
+				// delete from UDDI
+				uddiNaming.unbind(wsName);
+				if (verbose) {
+					System.out.printf("Unpublished '%s' from UDDI%n", wsName);
+				}
+				uddiNaming = null;
+			}
+		} catch (Exception e) {
+			if (verbose) {
+				System.out.printf("Caught exception when unbinding: %s%n", e);
+			}
+		}
+	}
+
 
 }

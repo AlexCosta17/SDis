@@ -3,6 +3,7 @@ package org.komparator.supplier.ws;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.jws.HandlerChain;
 import javax.jws.WebService;
 
 import org.komparator.supplier.domain.Product;
@@ -16,8 +17,9 @@ import org.komparator.supplier.domain.Supplier;
 		name = "SupplierWebService", 
 		portName = "SupplierPort", 
 		targetNamespace = "http://ws.supplier.komparator.org/", 
-		serviceName = "SupplierService"
+		serviceName = "SupplierService"		
 )
+@HandlerChain(file = "/handler-chain.xml")
 
 public class SupplierPortImpl { // implements SupplierPortType {
 
@@ -213,5 +215,5 @@ public class SupplierPortImpl { // implements SupplierPortType {
 		faultInfo.message = message;
 		throw new InsufficientQuantity_Exception(message, faultInfo);
 	}
-
+	
 }

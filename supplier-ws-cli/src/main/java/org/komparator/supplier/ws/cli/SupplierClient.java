@@ -73,7 +73,7 @@ public class SupplierClient implements SupplierPortType {
 
             if (verbose)
                 System.out.printf("Looking for '%s'%n", wsName);
-            wsURL = uddiNaming.lookup(wsName);
+            	wsURL = uddiNaming.lookup(wsName);
 
         } catch (Exception e) {
             String msg = String.format("Client failed lookup on UDDI at %s!",

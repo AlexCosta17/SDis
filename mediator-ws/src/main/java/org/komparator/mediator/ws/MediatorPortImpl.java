@@ -1,7 +1,7 @@
 package org.komparator.mediator.ws;
 
-import java.security.Timestamp;
 import java.sql.Date;
+import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -212,9 +212,8 @@ public class MediatorPortImpl implements MediatorPortType{
 			
 		}
 		else{
-			Date time = new Date(0);
-			lastDate = resultado.format(time);
-			System.out.println(lastDate);
+			Timestamp time = new Timestamp(System.currentTimeMillis());
+			System.out.println(time);
 		}
 			
 	}

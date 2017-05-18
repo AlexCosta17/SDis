@@ -34,8 +34,8 @@ public class MediatorApp {
 			endpoint.start();
 			System.out.println("Started the damn server");
 			Timer timer = new Timer(true);
-			LifeProof lifeProof = new LifeProof("http://localhost:8072/mediator-ws/endpoint");
-			timer.schedule(lifeProof, 0 * 1000, 5 * 1000);
+			//LifeProof lifeProof = new LifeProof("http://localhost:8072/mediator-ws/endpoint");
+			//timer.schedule(lifeProof, 0 * 1000, 5 * 1000);
 			Thread.sleep(5 * 1000);
 			
 			endpoint.awaitConnections();

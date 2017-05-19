@@ -5,6 +5,7 @@ import java.sql.Date;
 
 import javax.xml.ws.Endpoint;
 
+
 import pt.ulisboa.tecnico.sdis.ws.uddi.UDDINaming;
 
 /** End point manager */
@@ -30,7 +31,7 @@ public class MediatorEndpointManager {
 
 	/** Obtain Port implementation */
 
-	public MediatorPortType getPort() {
+	public MediatorPortImpl getPort() {
         return portImpl;
 	}
 
@@ -150,10 +151,9 @@ public class MediatorEndpointManager {
 		}
 	}
 
-	void unpublishFromUDDI() {
+	void unpublishFromUDDI() throws Exception {
 		try {
 			if (uddiNaming != null) {
-				// delete from UDDI
 				uddiNaming.unbind(wsName);
 				if (verbose) {
 					System.out.printf("Unpublished '%s' from UDDI%n", wsName);
@@ -164,6 +164,7 @@ public class MediatorEndpointManager {
 			if (verbose) {
 				System.out.printf("Caught exception when unbinding: %s%n", e);
 			}
+			throw e;
 		}
 	}
 

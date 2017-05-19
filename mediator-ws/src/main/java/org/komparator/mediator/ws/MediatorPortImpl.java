@@ -29,12 +29,18 @@ public class MediatorPortImpl implements MediatorPortType{
 
 	// end point manager
 	private MediatorEndpointManager endpointManager;
+	Timestamp time;
 
 	public MediatorPortImpl(MediatorEndpointManager endpointManager) {
 		this.endpointManager = endpointManager;
 	}
 
+	public Timestamp getTime() {
+		return time;
+	}
 	// Main operations -------------------------------------------------------
+	
+	
 	@Override
 	public List<ItemView> getItems(String productId) throws InvalidItemId_Exception {
 		if(productId == null)
@@ -203,15 +209,9 @@ public class MediatorPortImpl implements MediatorPortType{
 	}
 
 	public void imAlive() {
-		if(endpointManager.getwsURL().equals("http://localhost:8071/mediator-ws/endpoint")) {
-			System.out.println("IT'S THE PRIMARY!!");
-			return;
-		}
-		else {
-			Timestamp time = new Timestamp(System.currentTimeMillis());
-			System.out.println(time + "IT'S SECONDARY!!");
-		}
+		time = new Timestamp(System.currentTimeMillis());
 	}
+	
 	
 	@Override
 	public void updateShopHistory(List<ShoppingResultView> shopResults) {

@@ -1,6 +1,5 @@
 package org.komparator.mediator.ws;
 
-import java.util.Timer;
 
 public class MediatorApp {
 
@@ -20,6 +19,7 @@ public class MediatorApp {
 		if (args.length == 1) {
 			wsURL = args[0];
 			endpoint = new MediatorEndpointManager(wsURL);
+			
 		} else if (args.length >= 3){
 			uddiURL = args[0];
 			wsName = args[1];
@@ -32,13 +32,15 @@ public class MediatorApp {
 			endpoint.start();
 			
 			if (endpoint.getwsURL().equals("http://localhost:8071/mediator-ws/endpoint")) {
-				System.out.println("Started Primary Server!");
-				LifeProof lifeProof = new LifeProof(endpoint.getwsURL());
+				System.out.println("Started Primary Server and LifeProof!");
+				LifeProof lifeProof = new LifeProof(endpoint, endpoint.getwsURL());
+				lifeProof.run();
 				endpoint.awaitConnections();
 			}
 			else {
-				System.out.println("Started Secondary Server!");
-				LifeProof lifeProof = new LifeProof(endpoint.getwsURL());
+				System.out.println("Started Secondary Server and LifeProof!");
+				LifeProof lifeProof1 = new LifeProof(endpoint, endpoint.getwsURL());
+				lifeProof1.run();
 				endpoint.awaitConnections();
 			}			
 		} finally {

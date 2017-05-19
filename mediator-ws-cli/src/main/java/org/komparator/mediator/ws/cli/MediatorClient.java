@@ -41,6 +41,7 @@ public class MediatorClient implements MediatorPortType {
     /** WS endpoint address */
     private String wsURL = null; // default value is defined inside WSDL
 
+    
     public String getWsURL() {
         return wsURL;
     }
@@ -55,7 +56,7 @@ public class MediatorClient implements MediatorPortType {
     public void setVerbose(boolean verbose) {
         this.verbose = verbose;
     }
-
+    
     /** constructor with provided web service URL */
     public MediatorClient(String wsURL) throws MediatorClientException {
         this.wsURL = wsURL;

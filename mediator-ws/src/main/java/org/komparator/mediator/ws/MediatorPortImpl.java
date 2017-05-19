@@ -1,17 +1,13 @@
 package org.komparator.mediator.ws;
 
-import java.sql.Date;
 import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
 import javax.jws.WebService;
 
-import org.komparator.supplier.ws.BadProductId;
 import org.komparator.supplier.ws.BadProductId_Exception;
-import org.komparator.supplier.ws.BadText;
 import org.komparator.supplier.ws.BadText_Exception;
 import org.komparator.supplier.ws.ProductView;
 import org.komparator.supplier.ws.cli.SupplierClient;
@@ -206,21 +202,17 @@ public class MediatorPortImpl implements MediatorPortType{
 		throw new InvalidQuantity_Exception(message, faultInfo);
 	}
 
-	@Override
 	public void imAlive() {
-		if(endpointManager.getwsURL().equals("http://localhost:8071/mediator-ws/endpoint")){
-			
+		if(endpointManager.getwsURL().equals("http://localhost:8071/mediator-ws/endpoint")) {
+			System.out.println("IT'S THE PRIMARY!!");
+			return;
 		}
-		else{
+		else {
 			Timestamp time = new Timestamp(System.currentTimeMillis());
-			System.out.println(time);
+			System.out.println(time + "IT'S SECONDARY!!");
 		}
-			
 	}
 	
-	public static String lastDate;
-	private SimpleDateFormat resultado = new SimpleDateFormat("yyyy-MM-dd' 'HH:mm:ss.SSS");
-
 	@Override
 	public void updateShopHistory(List<ShoppingResultView> shopResults) {
 		// TODO Auto-generated method stub

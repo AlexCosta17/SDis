@@ -17,28 +17,30 @@ public class MediatorApp {
 
 		// Create server implementation object, according to options
 		MediatorEndpointManager endpoint = null;
-		if (args[0].equals("http://localhost:8072/mediator-ws/endpoint")) {
+		if (args.length == 1) {
 			wsURL = args[0];
 			endpoint = new MediatorEndpointManager(wsURL);
-			System.out.println("Correr secundário");
-		} else {
+		} else if (args.length >= 3){
 			uddiURL = args[0];
 			wsName = args[1];
 			wsURL = args[2];
 			endpoint = new MediatorEndpointManager(uddiURL, wsName, wsURL);
 			endpoint.setVerbose(true);
-			System.out.println("Correr primário");
 		}
 
 		try {
 			endpoint.start();
-			System.out.println("Started the damn server");
-			Timer timer = new Timer(true);
-			//LifeProof lifeProof = new LifeProof("http://localhost:8072/mediator-ws/endpoint");
-			//timer.schedule(lifeProof, 0 * 1000, 5 * 1000);
-			Thread.sleep(5 * 1000);
 			
-			endpoint.awaitConnections();
+			if (endpoint.getwsURL().equals("http://localhost:8071/mediator-ws/endpoint")) {
+				System.out.println("Started Primary Server!");
+				LifeProof lifeProof = new LifeProof(endpoint.getwsURL());
+				endpoint.awaitConnections();
+			}
+			else {
+				System.out.println("Started Secondary Server!");
+				LifeProof lifeProof = new LifeProof(endpoint.getwsURL());
+				endpoint.awaitConnections();
+			}			
 		} finally {
 			endpoint.stop();
 		}

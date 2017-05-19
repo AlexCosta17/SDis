@@ -172,5 +172,4 @@ public class MediatorClient implements MediatorPortType {
 	public void imAlive() {
 		port.imAlive();
 	}
- 
 }
